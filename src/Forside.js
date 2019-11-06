@@ -6,14 +6,28 @@ import {
 
 function Forside( { posts }) {
 
+  const arr = [...Array(24)];
+
   return (
     <div className="grid-container luke-bakgrunn">
-      {posts.map((post, i) => {
+      {arr.map((_, i) => {
+        console.log("SEPP)")
+        const post = posts[i];
         const cl = i % 2 === 0 ? "even" : "odd";
 
-        return (<div className={"post-element " + cl}>
-          <Link className="link-luke" to={"/luke/" + post.slug.current}><div className={`nummer-${cl}`}>{post.title}</div></Link>
-      </div>)})}
+        if (post) {
+          return (<div className={"post-element " + cl}>
+            <Link className="link-luke" to={"/luke/" + post.slug.current}>
+              <div className={`nummer-${cl}`}>{post.title}</div>
+            </Link>
+          </div>)
+        }
+          else {
+          return (<div className={"post-element disabled"}>
+              <div className={`nummer-${cl}-disabled`}>{i+1}</div>
+          </div>)
+          }
+        })}
     </div>
   );
 }

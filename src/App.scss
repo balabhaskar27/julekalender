@@ -1,16 +1,20 @@
 .App {
+  height: 100%;
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
 
 .grid-container {
   justify-items: center;
+  align-items: center;
   padding-top: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1rem;
+  grid-row-gap: 4rem;
+  padding-bottom: 12rem;
+  background-color: #a41a18;
 }
 
 a.link-luke:hover {
@@ -25,6 +29,14 @@ a.link-luke:hover {
   }
 }
 
+div[class^="nummer-"] {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+
 .nummer-even {
   color: black;
   font-size: 8rem;
@@ -33,6 +45,16 @@ a.link-luke:hover {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
+}
+
+.nummer-even-disabled {
+  color: black;
+  font-size: 8rem;
+}
+
+.nummer-odd-disabled {
+  color: #f9f9f9;
+  font-size: 8rem;
 }
 
 .nummer-even:hover {
@@ -87,12 +109,6 @@ a.link-luke:hover {
 
 .title {
   padding: 1rem;
-}
-
-.luke-bakgrunn {
-  background-color: #912023;
-  width: auto;
-  height: 2000px;
 }
 
 .luke-side {
