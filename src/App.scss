@@ -4,13 +4,13 @@
 }
 
 .grid-container {
+  justify-items: center;
   padding-top: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
 }
 
 a.link-luke:hover {
@@ -91,6 +91,8 @@ a.link-luke:hover {
 
 .luke-bakgrunn {
   background-color: #912023;
+  width: auto;
+  height: 2000px;
 }
 
 .luke-side {
