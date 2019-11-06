@@ -40,10 +40,13 @@ function App() {
   }, []);
 
   function compare( a, b ) {
-    if ( a.title < b.title ){
+    let aint = parseInt(a.title, 10);
+    let bint = parseInt(b.title, 10);
+
+    if ( aint < bint ){
       return -1;
     }
-    if ( a.title > b.title ){
+    if ( aint > bint ){
       return 1;
     }
     return 0;
