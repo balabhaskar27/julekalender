@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
+}
+
+a.link-luke:hover {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+
+  img {
+
+  }
+}
+
+.nummer-even {
+  color: black;
+  font-size: 8rem;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.nummer-even:hover {
+  color: #f9f9f9;
+}
+
+.nummer-odd {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  color: #f9f9f9;
+  font-size: 8rem;
+}
+
+.nummer-odd:hover {
+  color: black;
+}
+
+.post-element {
+  height: 200px;
+  width: 200px;
+}
+
+.even {
+  background-color: #f9f9f9;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.even:hover {
+  color: #f9f9f9;
+  background-color: black;
+}
+
+.odd {
+  background-color: black;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.odd:hover {
+  background-color: #f9f9f9;
+}
+
+.title {
+  padding: 1rem;
+}
+
+.luke-bakgrunn {
+  background-color: #912023;
+}
+
+.luke-side {
+  padding-top: 4rem;
+}

@@ -1,8 +1,34 @@
 import React, { useState, useEffect } from 'react';
-function Luke( { nr }) {
+const BlockContent = require('@sanity/block-content-to-react');
+
+const serializers = {
+  types: {
+    code: props => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    )
+  }
+};
+
+function Luke( { nr, posts }) {
+
+  const post = posts.find(post => post.slug.current == nr);
+
+  if (!post) return <h3>Denne luken finnes ikke.</h3>;
+
   return (
-    <div>Halla {nr}</div>
-  );
+    <div className="luke-side">
+    <h1>Luke {post.title}</h1>
+      <BlockContent
+        blocks={post.body}
+        serializers={serializers}
+        imageOptions={{w: 500}}
+        projectId="jraodywc"
+        dataset="production"
+      />
+    </div>
+);
 }
 
 export default Luke;

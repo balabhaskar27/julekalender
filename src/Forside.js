@@ -1,36 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { client } from './sanity.js';
+import {
+  Link
+} from "react-router-dom";
 
-function Forside() {
-  const query =
-    '*[_type == $type]';
-
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const fetchPosts = () => {
-      client
-        .fetch(query, {
-          type: 'post',
-        })
-        .then((res) => {
-          setPosts(res);
-        })
-        .catch((err) => {
-          console.log('err', err);
-          console.error('Oh no, error occured: ', err);
-        });
-    };
-
-    fetchPosts();
-  }, []);
-
-  console.log(posts);
+function Forside( { posts }) {
 
   return (
-    <div className="grid-container">
-      <div>Test</div>
-      <div>Yo</div>
+    <div className="grid-container luke-bakgrunn">
+      {posts.map((post, i) => {
+        const cl = i % 2 === 0 ? "even" : "odd";
+
+        return (<div className={"post-element " + cl}>
+          <Link className="link-luke" to={"/luke/" + post.slug.current}><div className={`nummer-${cl}`}>{post.title}</div></Link>
+      </div>)})}
     </div>
   );
 }
