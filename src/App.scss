@@ -17,6 +17,20 @@
   background-color: #a41a18;
 }
 
+.luke-side {
+  background-color: #a41a18;
+  color: white;
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    border: 5px solid black;
+  }
+
+}
+
 a.link-luke:hover {
   text-decoration: none;
 }
@@ -113,4 +127,31 @@ div[class^="nummer-"] {
 
 .luke-side {
   padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.oppgavetekst {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#løsning {
+  color: black;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.løsningwrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notfound {
+  color: white;
+  margin-top: 4rem;
+}
+
+#solutionButton {
+  background-color: black;
+  border-color: black;
 }

@@ -12,10 +12,9 @@ import {
 import {client} from "./sanity";
 
 function App() {
-
   const now = new Date().toISOString();
 
-  const query = `*[_type == $type  && ((publishedAt <= "${now}"))]`;
+  const query = `*[_type == $type  && ((publishedAt <= "${now}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
 
   const [posts, setPosts] = useState([]);
 
