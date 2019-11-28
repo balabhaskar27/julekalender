@@ -1,3 +1,5 @@
+$break-small: 400px;
+
 .App {
   height: 100%;
   text-align: center;
@@ -23,10 +25,17 @@
 
   p {
     margin-bottom: 2rem;
+    @media screen and (max-width: $break-small) {
+      width: 300px;
+    }
   }
 
   img {
     border: 5px solid black;
+
+    @media screen and (max-width: $break-small) {
+      width: 300px;
+    }
   }
 
 }
@@ -154,4 +163,18 @@ div[class^="nummer-"] {
 #solutionButton {
   background-color: black;
   border-color: black;
+}
+
+.about {
+  text-align: left;
+  margin-left: 2rem;
+
+  h1 {
+    color: #f9f9f9;
+    margin-top: 2rem;
+  }
+
+  .about-body {
+    color: white;
+  }
 }

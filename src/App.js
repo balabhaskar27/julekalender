@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Forside from './Forside';
 import Luke from './Luke';
+import About from './About';
 import './App.scss';
 import logo from './assets/logo-offer.png';
 import {
@@ -15,10 +16,9 @@ function App() {
   const now = new Date().toISOString();
 
   const query = `*[_type == $type  && ((publishedAt <= "${now}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
+  const test = `*[_type == $type  && ((dd <= "${now}"))]`;
 
   const [posts, setPosts] = useState([]);
-
-  console.log(posts);
 
   useEffect(() => {
     const fetchPosts = () => {
@@ -74,6 +74,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Forside posts={postsSorted} />
+            </Route>
+            <Route exact path="/om">
+              <About />
             </Route>
             <Route path="/luke/:nr" component={props => <Luke nr={props.match.params.nr} posts={posts} />}/>
           </Switch>
