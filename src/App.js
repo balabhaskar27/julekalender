@@ -15,10 +15,12 @@ import {client} from "./sanity";
 function App() {
   const now = new Date().toISOString();
 
-  const query = `*[_type == $type  && ((publishedAt <= "${now}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
-  const test = `*[_type == $type  && ((dd <= "${now}"))]`;
-
   const [posts, setPosts] = useState([]);
+  const [date, setDate] = useState('');
+
+  console.log(posts);
+
+  const query = `*[_type == $type  && ((publishedAt <= "${date}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
 
   useEffect(() => {
     const fetchPosts = () => {
@@ -34,9 +36,20 @@ function App() {
           console.error('Oh no, error occured: ', err);
         });
     };
+    console.log("FETCHEEEEED");
+    date && fetchPosts();
+  }, [date]);
 
-    fetchPosts();
+  useEffect(() => {
+    fetch('http://worldtimeapi.org/api/timezone/Europe/Amsterdam.json')
+      .then(response =>  response.json())
+      .then(res => {
+        setDate(res.datetime.split(".")[0]); //this is an asynchronous function
+      })
   }, []);
+
+  console.log(now);
+  console.log(date);
 
   function compare( a, b ) {
     let aint = parseInt(a.title, 10);
@@ -50,7 +63,6 @@ function App() {
     }
     return 0;
   }
-
 
   const postsSorted = posts.sort(compare);
 
