@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d430106.chunk.css",
-    "main.js": "/static/js/main.b778cc15.chunk.js",
-    "main.js.map": "/static/js/main.b778cc15.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b0433058.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b0433058.js.map",
-    "static/css/2.64a99b10.chunk.css": "/static/css/2.64a99b10.chunk.css",
-    "static/js/2.3f6b5a28.chunk.js": "/static/js/2.3f6b5a28.chunk.js",
-    "static/js/2.3f6b5a28.chunk.js.map": "/static/js/2.3f6b5a28.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.40411a46dbc7d91e6834e3c27feb7be2.js": "/precache-manifest.40411a46dbc7d91e6834e3c27feb7be2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.64a99b10.chunk.css.map": "/static/css/2.64a99b10.chunk.css.map",
-    "static/css/main.3d430106.chunk.css.map": "/static/css/main.3d430106.chunk.css.map",
-    "static/media/logo-offer.png": "/static/media/logo-offer.c4551d30.png"
+    "main.css": "/julekalender/static/css/main.3d430106.chunk.css",
+    "main.js": "/julekalender/static/js/main.33a0fe67.chunk.js",
+    "main.js.map": "/julekalender/static/js/main.33a0fe67.chunk.js.map",
+    "runtime-main.js": "/julekalender/static/js/runtime-main.9b8ea490.js",
+    "runtime-main.js.map": "/julekalender/static/js/runtime-main.9b8ea490.js.map",
+    "static/css/2.64a99b10.chunk.css": "/julekalender/static/css/2.64a99b10.chunk.css",
+    "static/js/2.3f6b5a28.chunk.js": "/julekalender/static/js/2.3f6b5a28.chunk.js",
+    "static/js/2.3f6b5a28.chunk.js.map": "/julekalender/static/js/2.3f6b5a28.chunk.js.map",
+    "index.html": "/julekalender/index.html",
+    "precache-manifest.2f59972b84b79e9ab16bd7474091bef2.js": "/julekalender/precache-manifest.2f59972b84b79e9ab16bd7474091bef2.js",
+    "service-worker.js": "/julekalender/service-worker.js",
+    "static/css/2.64a99b10.chunk.css.map": "/julekalender/static/css/2.64a99b10.chunk.css.map",
+    "static/css/main.3d430106.chunk.css.map": "/julekalender/static/css/main.3d430106.chunk.css.map",
+    "static/media/logo-offer.png": "/julekalender/static/media/logo-offer.c4551d30.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b0433058.js",
+    "static/js/runtime-main.9b8ea490.js",
     "static/css/2.64a99b10.chunk.css",
     "static/js/2.3f6b5a28.chunk.js",
     "static/css/main.3d430106.chunk.css",
-    "static/js/main.b778cc15.chunk.js"
+    "static/js/main.33a0fe67.chunk.js"
   ]
 }
