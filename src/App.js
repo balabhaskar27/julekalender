@@ -16,7 +16,7 @@ import { Countdown } from './utils/countdown';
 const { DateTime } = require('luxon');
 
 function App() {
-  const now = DateTime.local().setZone('Europe/London').toISO();
+  const now = DateTime.utc().toISO();
 
   const visCountdown = now < "2019-11-30T23:00:00";
 

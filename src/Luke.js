@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from './sanity';
 import Particles from 'react-particles-js';
+import moment from "moment";
 const BlockContent = require('@sanity/block-content-to-react');
+const { DateTime } = require('luxon');
 
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder(client);
@@ -14,8 +16,6 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-
-
 const serializers = {
   types: {
     code: props => (
@@ -26,8 +26,18 @@ const serializers = {
   }
 };
 
-function Luke( { nr, posts }) {
+const stengtLukeBeskjed = ( post, stengtLuke, lukenr ) => {
+  let beskjed = <div className="luke-beskjed"><i>Send inn svaret til julekalender@offerspill.no før {lukenr + 1}. desember.</i></div>;
 
+  if (stengtLuke) {
+    if (post.solution) return <div className="luke-beskjed"><i>Luken er stengt.</i></div>;
+
+    beskjed = <div className="luke-beskjed"><i>Luken er stengt. Løsningen dukker snart opp her på siden.</i></div>;
+  }
+  return beskjed;
+}
+
+function Luke( { nr, posts }) {
   const [detaljertTekst, setDetaljertTekst] = useState("Vis løsning");
 
   const toggleTekst = () => {
@@ -39,15 +49,19 @@ function Luke( { nr, posts }) {
   };
 
   const post = posts.find(post => post.slug.current == nr);
+  const lukenr = (parseInt(nr, 10));
 
   if (!post) {
-    const lukenr = (parseInt(nr, 10));
     if (lukenr > 0 && lukenr < 25) return <h3 className="notfound">Du må nok vente litt.</h3>;
     return <h3 className="notfound">Denne luken finnes ikke.</h3>
   }
 
-  console.log("POST", post);
-  console.log(post.publishedAt)
+  const now = DateTime.utc().toISO();
+
+
+  const diff = moment.duration(moment(now).diff(moment(post.publishedAt)));
+
+  const stengtLuke = diff._data.days > 0;
 
   return (
     <div className="luke-side">
@@ -62,6 +76,7 @@ function Luke( { nr, posts }) {
           dataset="production"
         />
       </div>
+      {stengtLukeBeskjed(post, stengtLuke, lukenr)}
       <div>
         {post.solution ?
           <div className="løsningwrapper">
