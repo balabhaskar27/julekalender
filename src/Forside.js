@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { client } from './sanity.js';
+import React from 'react';
 import {
   Link
 } from "react-router-dom";
@@ -16,14 +15,14 @@ function Forside( { posts }) {
         const cl = i % 2 === 0 ? "even" : "odd";
 
         if (post) {
-          return (<div className={"post-element " + cl}>
+          return (<div key={i} className={"post-element " + cl}>
             <Link className="link-luke" to={"/luke/" + post.slug.current}>
               <div className={`nummer-${cl}`}>{post.title}</div>
             </Link>
           </div>)
         }
           else {
-          return (<div className={"post-element disabled"}>
+          return (<div key={i} className={"post-element disabled"}>
               <div className={`nummer-${cl}-disabled`}>{i+1}</div>
           </div>)
           }

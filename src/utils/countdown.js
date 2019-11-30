@@ -43,7 +43,7 @@ export class Countdown extends React.Component {
 		
 		return (
 			<div className="countdown">
-				Kalenderen åpner om {hours} timer, {minutes} minutter og {seconds} sekunder.
+				Første luke åpner om {hours} timer, {minutes} minutter og {seconds} sekunder.
 			</div>
 		);
 	}

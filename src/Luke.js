@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from './sanity';
 import Particles from 'react-particles-js';
@@ -47,6 +47,7 @@ function Luke( { nr, posts }) {
   }
 
   console.log("POST", post);
+  console.log(post.publishedAt)
 
   return (
     <div className="luke-side">

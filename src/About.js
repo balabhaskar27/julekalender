@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import imageUrlBuilder from '@sanity/image-url';
 import { client } from './sanity';
 const BlockContent = require('@sanity/block-content-to-react');
 
