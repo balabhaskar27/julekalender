@@ -35,9 +35,6 @@ function About( { }) {
     fetchAbout();
   }, []);
 
-  console.log("about");
-  console.log(about);
-
   return (
     <div className="about">
       <h1>{about.header}</h1>

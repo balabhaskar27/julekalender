@@ -10,7 +10,6 @@ function Forside( { posts }) {
   return (
     <div className="grid-container luke-bakgrunn">
       {arr.map((_, i) => {
-        console.log("SEPP)")
         const post = posts[i];
         const cl = i % 2 === 0 ? "even" : "odd";
 

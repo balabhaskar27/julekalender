@@ -21,10 +21,6 @@ function App() {
   const visCountdown = now < "2019-11-30T23:00:00";
 
   const [posts, setPosts] = useState([]);
-
-  console.log(now);
-  console.log(posts);
-
   const query = `*[_type == $type  && ((publishedAt <= "${now}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
 
   useEffect(() => {
@@ -61,10 +57,7 @@ function App() {
 
   const then = "2019-11-30T10:41:00"
 
-  console.log(now);
-
   const jepp = now < then ? "JADDA" : "NEI"
-  console.log(jepp);
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
