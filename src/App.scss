@@ -26,6 +26,7 @@ $break-small: 400px;
 }
 
 .luke-side {
+  height: 100vw;
   background: rgb(2,0,36);
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 53%, rgba(94,0,255,1) 100%);
 
@@ -223,4 +224,11 @@ a{
   top: 0;
   left: 0;
   z-index: -10;
+}
+
+.countdown {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 4rem;
 }
