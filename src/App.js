@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Forside from './Forside';
+import { Helmet } from 'react-helmet';
 import Luke from './Luke';
 import About from './About';
 import './App.scss';
@@ -59,6 +60,9 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
+        <Helmet>
+        <title>OSK Julekalender</title>
+      </Helmet>
         <div className="main-container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a href="#"><img src={logo} height="50px;"/></a>

@@ -3,6 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import { client } from './sanity';
 import Particles from 'react-particles-js';
 import moment from "moment";
+import { Helmet } from 'react-helmet';
 const BlockContent = require('@sanity/block-content-to-react');
 const { DateTime } = require('luxon');
 
@@ -64,6 +65,10 @@ function Luke( { nr, posts }) {
   const stengtLuke = diff._data.days > 0;
 
   return (
+    <>
+     <Helmet>
+      <title>Luke {lukenr.toString()} – OSK Julekalender</title>
+    </Helmet>
     <div className="luke-side">
       <div className="oppgave-del">
     <h1>Luke {post.title}</h1>
@@ -173,6 +178,7 @@ function Luke( { nr, posts }) {
             retina_detect: true
           }} />
     </div>
+    </>
 );
 }
 
