@@ -27,7 +27,7 @@ const serializers = {
 };
 
 const stengtLukeBeskjed = ( post, stengtLuke, lukenr ) => {
-  let beskjed = <div className="luke-beskjed"><i>Send inn svaret til <a href={`mailto:julekalender@offerspill.no?subject=Luke ${lukenr}`}>julekalender@offerspill.no</a> før {lukenr + 1}. desember.</i></div>;
+  let beskjed = <div className="luke-beskjed"><i>Send inn svaret til <a href={`mailto:julekalender@offerspill.no?subject=Luke ${lukenr}`}>julekalender@offerspill.no</a> innen midnatt.</i></div>;
 
   if (stengtLuke) {
     if (post.solution) return <div className="luke-beskjed"><i>Luken er stengt.</i></div>;
