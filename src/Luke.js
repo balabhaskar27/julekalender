@@ -27,7 +27,7 @@ const serializers = {
 };
 
 const stengtLukeBeskjed = ( post, stengtLuke, lukenr ) => {
-  let beskjed = <div className="luke-beskjed"><i>Send inn svaret til julekalender@offerspill.no før {lukenr + 1}. desember.</i></div>;
+  let beskjed = <div className="luke-beskjed"><i>Send inn svaret til <a href={`mailto:julekalender@offerspill.no?subject=Luke ${lukenr}`}>julekalender@offerspill.no</a> før {lukenr + 1}. desember.</i></div>;
 
   if (stengtLuke) {
     if (post.solution) return <div className="luke-beskjed"><i>Luken er stengt.</i></div>;
@@ -52,8 +52,8 @@ function Luke( { nr, posts }) {
   const lukenr = (parseInt(nr, 10));
 
   if (!post) {
-    if (lukenr > 0 && lukenr < 25) return <h3 className="notfound">Du må nok vente litt.</h3>;
-    return <h3 className="notfound">Denne luken finnes ikke.</h3>
+    if (lukenr > 0 && lukenr < 25) return <div className="luke-side"><h3 className="notfound">Du må nok vente litt.</h3></div>;
+    return <div className="luke-side"><h3 className="notfound">Denne luken finnes ikke.</h3></div>;
   }
 
   const now = DateTime.utc().toISO();
@@ -62,6 +62,9 @@ function Luke( { nr, posts }) {
   const diff = moment.duration(moment(now).diff(moment(post.publishedAt)));
 
   const stengtLuke = diff._data.days > 0;
+
+  console.log("POST");
+  console.log(post);
 
   return (
     <div className="luke-side">
@@ -97,7 +100,7 @@ function Luke( { nr, posts }) {
           </div>
         </div> : null}
       </div>
-      <img className="oppgavebilde" src={urlFor(post.mainImage).width(400).url()} />
+      {post.mainImage && post.mainImage.asset ? <img className="oppgavebilde" src={urlFor(post.mainImage).width(400).url()} /> : null}
       </div>
         <Particles
           className="partikler"

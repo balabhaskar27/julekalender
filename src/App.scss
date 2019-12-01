@@ -25,10 +25,36 @@ $break-small: 400px;
   background-color: #a41a18;
 }
 
+.about {
+  height: 100%;
+  background: rgb(2,0,36);
+
+  padding-top: 4rem;
+  padding-bottom: 20rem;
+
+  color: white;
+  z-index: 10;
+  position: relative;
+
+  h1 {
+    color: #f9f9f9;
+    margin-top: 2rem;
+  }
+
+  .about-body {
+    color: white;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+}
+
 .luke-side {
   height: 100%;
   background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 53%, rgba(94,0,255,1) 100%);
 
   padding-top: 4rem;
   padding-bottom: 8.2rem;
@@ -190,19 +216,6 @@ a{
   border-color: black;
 }
 
-.about {
-  text-align: left;
-  margin: 2rem;
-
-  h1 {
-    color: #f9f9f9;
-    margin-top: 2rem;
-  }
-
-  .about-body {
-    color: white;
-  }
-}
 
 .oppgave-del {
   z-index: 100;
