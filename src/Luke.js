@@ -59,7 +59,6 @@ function Luke( { nr, posts }) {
 
   const now = DateTime.utc().toISO();
 
-
   const diff = moment.duration(moment(now).diff(moment(post.publishedAt)));
 
   const stengtLuke = diff._data.days > 0;
@@ -83,7 +82,7 @@ function Luke( { nr, posts }) {
       </div>
       {stengtLukeBeskjed(post, stengtLuke, lukenr)}
       <div>
-        {post.solution ?
+        {post.solution && stengtLuke ?
           <div className="løsningwrapper">
           <a onClick={() => toggleTekst()} id="solutionButton" className="btn btn-primary" data-toggle="collapse" href="#løsning" role="button"
              aria-expanded="false" aria-controls="collapseExample">
