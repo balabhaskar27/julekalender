@@ -11,14 +11,11 @@ import {
   Link
 } from "react-router-dom";
 import {client} from "./sanity";
-import { Countdown } from './utils/countdown';
 
 const { DateTime } = require('luxon');
 
 function App() {
   const now = DateTime.utc().toISO();
-
-  const visCountdown = now < "2019-11-30T23:00:00";
 
   const [posts, setPosts] = useState([]);
   const query = `*[_type == $type  && ((publishedAt <= "${now}"))]{author, body, mainImage, publishedAt, slug, title, solution}`;
@@ -76,10 +73,6 @@ function App() {
               </ul>
             </div>
           </nav>
-          {visCountdown ? <Countdown 
-		timeTillDate="11 30 2019, 23:00 pm" 
-		timeFormat="MM DD YYYY, h:mm a" 
-	/> : null}
           <Switch>
             <Route exact path="/">
               <Forside posts={postsSorted} />
