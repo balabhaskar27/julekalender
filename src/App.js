@@ -69,7 +69,7 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="nav navbar-nav">
                 <li><Link className="nav-item nav-link" to="/">Luker</Link></li>
-                <li><Link className="nav-item nav-link" to="/om">Om</Link></li>
+                <li><Link className="nav-item nav-link" to="/om">Om julekalenderen</Link></li>
               </ul>
             </div>
           </nav>
