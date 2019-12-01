@@ -63,9 +63,6 @@ function Luke( { nr, posts }) {
 
   const stengtLuke = diff._data.days > 0;
 
-  console.log("POST");
-  console.log(post);
-
   return (
     <div className="luke-side">
       <div className="oppgave-del">
