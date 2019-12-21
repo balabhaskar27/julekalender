@@ -110,7 +110,7 @@ div[class^="nummer-"] {
   color: black;
   font-size: 8rem;
   -o-transition:.5s;
-  -ms-transition:.5s;
+  -ms-transition:.5s
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
@@ -216,7 +216,6 @@ a{
   border-color: #a41a18;
 }
 
-
 .oppgave-del {
   z-index: 100;
 }
@@ -248,4 +247,8 @@ a{
 
 .luke-beskjed {
   margin-bottom: 1rem;
+}
+
+.card-body {
+  text-align: left;
 }
